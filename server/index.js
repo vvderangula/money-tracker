@@ -38,7 +38,7 @@ app.get('/transactions', async (req, res) => {
         res.status(500).json({ error: error.message });
     }
 });
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 
 // ✅ CONNECT TO DB ONCE
 mongoose.connect(process.env.MONGO_URL)
